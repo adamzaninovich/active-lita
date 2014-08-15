@@ -9,3 +9,4 @@ gem "lita-slack-handler"
 # Plugins
 gem "lita-karma"
 gem "lita-wikipedia"
+gem "lita-xkcd"
