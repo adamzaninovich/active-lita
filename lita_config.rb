@@ -4,7 +4,11 @@ Lita.configure do |config|
 
   # The adapter you want to connect with. Make sure you've added the
   # appropriate gem to the Gemfile.
-  config.robot.adapter = :slack
+  if ENV["RACK_ENV"] == "production"
+    config.robot.adapter = :slack
+  else
+    config.robot.adapter = :shell
+  end
 
   # Slack configurations
   config.robot.mention_name = "@lita"
