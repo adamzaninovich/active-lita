@@ -1,7 +1,15 @@
+GIT
+  remote: git://github.com/adamzaninovich/lita-google-images.git
+  revision: 2e600bc29247c492003fd7104bdf0b1ae47021b9
+  specs:
+    lita-google-images (1.0.5)
+      lita (>= 2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
     artii (2.0.4)
+    coderay (1.1.0)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
     faraday_middleware (0.9.1)
@@ -40,8 +48,13 @@ GEM
     lita-yelpme (0.1.2)
       lita (>= 3.2)
       yelp
+    method_source (0.8.2)
     multi_json (1.10.1)
     multipart-post (2.0.0)
+    pry (0.10.0)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
     puma (2.9.0)
       rack (>= 1.1, < 2.0)
     rack (1.5.2)
@@ -50,6 +63,7 @@ GEM
     redis-namespace (1.5.1)
       redis (~> 3.0, >= 3.0.4)
     simple_oauth (0.2.0)
+    slop (3.6.0)
     thor (0.19.1)
     url_mount (0.2.1)
       rack
@@ -64,9 +78,11 @@ PLATFORMS
 DEPENDENCIES
   lita
   lita-ascii-art
+  lita-google-images!
   lita-karma
   lita-slack
   lita-slack-handler
   lita-wikipedia
   lita-xkcd
   lita-yelpme
+  pry
