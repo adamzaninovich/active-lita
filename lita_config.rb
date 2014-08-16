@@ -23,6 +23,7 @@ Lita.configure do |config|
   config.adapter.incoming_token = ENV["SLACK_INCOMING_TOKEN"]
   config.adapter.team_domain = ENV["SLACK_TEAM_DOMAIN"]
   config.adapter.incoming_url = ENV["SLACK_INCOMING_URL"]
+  config.adapter.add_mention = true
 
   # Handlers
   config.handlers.slack_handler.webhook_token = ENV["SLACK_WEBHOOK_TOKEN"]
