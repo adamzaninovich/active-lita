@@ -15,7 +15,7 @@ gem "lita-yelpme"
 gem "lita-ascii-art"
 gem "lita-google-images", github: 'adamzaninovich/lita-google-images'
 
-# Development
-unless ENV["RACK_ENV"] == "production"
+# Tools
+group :development do
   gem 'pry'
 end
