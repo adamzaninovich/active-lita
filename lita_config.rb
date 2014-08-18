@@ -28,6 +28,7 @@ Lita.configure do |config|
   # Handlers
   config.handlers.slack_handler.webhook_token = ENV["SLACK_WEBHOOK_TOKEN"]
   config.handlers.slack_handler.team_domain = ENV["SLACK_TEAM_DOMAIN"]
+  config.handlers.slack_handler.ignore_user_name = slackbot
 
   # The locale code for the language to use.
   # config.robot.locale = :en
