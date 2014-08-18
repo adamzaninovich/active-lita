@@ -1,3 +1,7 @@
+$:.unshift "#{File.dirname(__FILE__)}/lib"
+
+require 'lita/handlers/active_random'
+
 Lita.configure do |config|
   # The name your robot will use.
   config.robot.name = "Lita"
@@ -24,7 +28,6 @@ Lita.configure do |config|
   # Handlers
   config.handlers.slack_handler.webhook_token = ENV["SLACK_WEBHOOK_TOKEN"]
   config.handlers.slack_handler.team_domain = ENV["SLACK_TEAM_DOMAIN"]
-
 
   # The locale code for the language to use.
   # config.robot.locale = :en
