@@ -105,22 +105,21 @@ module Lita
 
       def hubot response
         response.reply "hubot??"
-        sleep 1
-        response.reply "HUBOT?!?!"
-        sleep 1
-        response.reply "http://funnymemes.com/wp-content/uploads/2013/01/Dont-be-jealous.jpg"
+        after(1) { |timer| response.reply "HUBOT?!?!" }
+        after(2) { |timer| response.reply "psshh" }
       end
 
       def pineapple response
-        response.reply "Pineapple #{response.matches.flatten.first}, PINEAPPLE!"
-        response.reply "pineapple means shut the fuck up!"
-        response.reply %w[
+        pineapples = %w[
           http://s.quickmeme.com/img/e3/e323d07708b52965621f587d9e80dcff6ae51bedc02096eaee415fa3eb9e237b.jpg
           http://misseytwisted.files.wordpress.com/2013/09/3qdjjp.jpg
           http://www.feastsoffury.com/wp-content/uploads/2013/10/skyler-shut-up.gif
           https://quizzicalllama.files.wordpress.com/2013/10/76081-adam-sandler-haha-shut-up-gif-mh2n.gif
           http://cdn.memegenerator.net/instances/500x/44569345.jpg
-        ].sample
+        ]
+        response.reply "Pineapple #{response.matches.flatten.first}, PINEAPPLE!"
+        after(1) { |timer| response.reply "pineapple means shut the fuck up!" }
+        after(4) { |timer| response.reply pineapples.sample }
       end
 
       def goooood response
