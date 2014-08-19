@@ -19,12 +19,12 @@ module Lita
       route /\bmind blown\b/i,                               :mind_blown
       route /\bhubot\b/i,                                    :hubot
       route /\bpineapple (.+)\b/i,                           :pineapple
+      route /\bgooo+d\b/i,                                   :goooood
       route /\bI love you.*lita\b/i,                         :lita_love
       route /\bI love you\b/i,                               :lita_love,          command: true
       route /\ba?re? y?o?u drunk/i,                          :r_u_drunk,          command: true
       route /\bdownload( more)? ram\b/i,                     :download_ram,       command: true
       route /\bdo (yo)?u work( )?out\b/i,                    :do_u_workout,       command: true
-
 
       def pensive_nate response
         response.reply "http://i.imgur.com/4PaAUu5.png"
@@ -120,6 +120,16 @@ module Lita
           http://www.feastsoffury.com/wp-content/uploads/2013/10/skyler-shut-up.gif
           https://quizzicalllama.files.wordpress.com/2013/10/76081-adam-sandler-haha-shut-up-gif-mh2n.gif
           http://cdn.memegenerator.net/instances/500x/44569345.jpg
+        ].sample
+      end
+
+      def goooood response
+        response.reply %w[
+          http://i.imgur.com/1jtr4HM.png
+          http://torwars.com/wp-content/uploads/2011/10/darth-sidious.jpg
+          http://i.imgur.com/j83QRp7.png
+          http://i.imgur.com/rm8NcQC.jpg
+          http://i.imgur.com/nmC7Hnb.jpg
         ].sample
       end
 
