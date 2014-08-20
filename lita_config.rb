@@ -41,5 +41,5 @@ Lita.configure do |config|
   config.redis.url = ENV["REDISTOGO_URL"]
   config.http.port = ENV["PORT"]
 
-  config.robot.admins = ENV["LITA_ADMINS"].split ','
+  config.robot.admins = ENV["LITA_ADMINS"].to_s.split ','
 end
