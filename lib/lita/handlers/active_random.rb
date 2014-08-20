@@ -138,7 +138,12 @@ module Lita
       end
 
       def lita_love response
-        response.reply "aww, I love you too, #{response.user.name}!"
+        love = if response.user.name == 'tielur'
+          %w[eh meh whatever].sample
+        else
+          "aww, I love you too, #{response.user.name}!"
+        end
+        response.reply love
       end
 
       def r_u_drunk response
