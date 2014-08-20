@@ -15,16 +15,16 @@ GIT
 
 GIT
   remote: git://github.com/tielur/lita-custom-meme.git
-  revision: 99015e5bbb35561bf03dc6045e1cd87933e5be9b
+  revision: 395d713894b2dd78ae5ce7775b36a42967ac17ed
   specs:
     lita-custom-meme (0.1.1)
       lita (>= 3.1)
 
 GIT
   remote: git://github.com/tielur/lita-what-does-the-fox-say.git
-  revision: 758fe9d082e554e40af061719a31855f489d8ab7
+  revision: e4aefdc73b9abfab0b8bb9bece72808a26eeef64
   specs:
-    lita-what-does-the-fox-say (0.0.1)
+    lita-what-does-the-fox-say (0.0.3)
       lita (>= 3.3)
 
 GEM
@@ -75,7 +75,7 @@ GEM
     method_source (0.8.2)
     multi_json (1.10.1)
     multipart-post (2.0.0)
-    pry (0.10.0)
+    pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
