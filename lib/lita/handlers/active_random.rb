@@ -3,7 +3,7 @@ require "lita"
 module Lita
   module Handlers
     class ActiveRandom < Handler
-      route /\bdis gon b gud\b/                              :dis_gon_b_gud
+      route /\bdis gon b gud\b/,                             :dis_gon_b_gud
       route /\bhmm*\b/i,                                     :pensive_nate
       route /\bdemeter\b/i,                                  :say_demeter_again
       route /\bgrapes\b/i,                                   :fuck_yo_grapes
