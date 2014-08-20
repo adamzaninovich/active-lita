@@ -3,6 +3,7 @@ require "lita"
 module Lita
   module Handlers
     class ActiveRandom < Handler
+      route /\bdis gon b gud\b/                              :dis_gon_b_gud
       route /\bhmm*\b/i,                                     :pensive_nate
       route /\bdemeter\b/i,                                  :say_demeter_again
       route /\bgrapes\b/i,                                   :fuck_yo_grapes
@@ -25,6 +26,10 @@ module Lita
       route /\ba?re? y?o?u drunk/i,                          :r_u_drunk,          command: true
       route /\bdownload( more)? ram\b/i,                     :download_ram,       command: true
       route /\bdo (yo)?u work( )?out\b/i,                    :do_u_workout,       command: true
+
+      def dis_gon_b_gud response
+        response.reply "http://i.imgur.com/uh5A6.gif"
+      end
 
       def pensive_nate response
         response.reply "http://i.imgur.com/4PaAUu5.png"
