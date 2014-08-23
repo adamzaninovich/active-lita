@@ -30,6 +30,11 @@ Lita.configure do |config|
   config.handlers.slack_handler.team_domain = ENV["SLACK_TEAM_DOMAIN"]
   config.handlers.slack_handler.ignore_user_name = "slackbot"
 
+  config.handlers.yelpme.consumer_secret = ENV['YELP_CONSUMER_SECRET']
+  config.handlers.yelpme.consumer_key = ENV['YELP_CONSUMER_KEY']
+  config.handlers.yelpme.token_key = ENV['YELP_TOKEN_KEY']
+  config.handlers.yelpme.token_secret = ENV['YELP_TOKEN_SECRET']
+
   # The locale code for the language to use.
   # config.robot.locale = :en
 
