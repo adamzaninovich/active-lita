@@ -32,7 +32,7 @@ Lita.configure do |config|
 
   config.handlers.yelpme.consumer_secret = ENV['YELP_CONSUMER_SECRET']
   config.handlers.yelpme.consumer_key = ENV['YELP_CONSUMER_KEY']
-  config.handlers.yelpme.token_key = ENV['YELP_TOKEN_KEY']
+  config.handlers.yelpme.token = ENV['YELP_TOKEN']
   config.handlers.yelpme.token_secret = ENV['YELP_TOKEN_SECRET']
 
   # The locale code for the language to use.
