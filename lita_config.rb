@@ -34,6 +34,7 @@ Lita.configure do |config|
   config.handlers.yelpme.consumer_key = ENV['YELP_CONSUMER_KEY']
   config.handlers.yelpme.token = ENV['YELP_TOKEN']
   config.handlers.yelpme.token_secret = ENV['YELP_TOKEN_SECRET']
+  config.handlers.yelpme.default_city = 'San Diego'
 
   # The locale code for the language to use.
   # config.robot.locale = :en
