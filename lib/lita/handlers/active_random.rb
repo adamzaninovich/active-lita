@@ -133,7 +133,7 @@ module Lita
           https://quizzicalllama.files.wordpress.com/2013/10/76081-adam-sandler-haha-shut-up-gif-mh2n.gif
           http://cdn.memegenerator.net/instances/500x/44569345.jpg
         ]
-        response.reply "Pineapple #{response.matches.flatten.first}, PINEAPPLE!"
+        response.reply "Pineapple #{response.message.body}, PINEAPPLE!"
         after(1) { |timer| response.reply "pineapple means shut the fuck up!" }
         after(4) { |timer| response.reply pineapples.sample }
       end
