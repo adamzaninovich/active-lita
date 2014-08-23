@@ -3,7 +3,6 @@ require "lita"
 module Lita
   module Handlers
     class ActiveRandom < Handler
-      route /\Aping\z/i,                                     :ping
       route /\bbutler\b/i,                                   :bob_the_butler
       route /\bdis gon b gud\b/,                             :dis_gon_b_gud
       route /\bhmm*\b/i,                                     :pensive_nate
@@ -28,6 +27,7 @@ module Lita
       route /\ba?re? y?o?u drunk/i,                          :r_u_drunk,          command: true
       route /\bdownload( more)? ram\b/i,                     :download_ram,       command: true
       route /\bdo (yo)?u( even)? (work( )?out|lift)\b/i,     :do_u_workout,       command: true
+      route /\Aping\z/i,                                     :ping,               command: true
 
       def ping response
         pongs = ['Can I help you?', "Yes...I'm still here.", "I'm alive!"]
