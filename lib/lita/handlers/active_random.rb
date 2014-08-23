@@ -3,6 +3,7 @@ require "lita"
 module Lita
   module Handlers
     class ActiveRandom < Handler
+      route /\bbutler\b/i,                                   :bob_the_butler
       route /\bdis gon b gud\b/,                             :dis_gon_b_gud
       route /\bhmm*\b/i,                                     :pensive_nate
       route /\bdemeter\b/i,                                  :say_demeter_again
@@ -26,6 +27,16 @@ module Lita
       route /\ba?re? y?o?u drunk/i,                          :r_u_drunk,          command: true
       route /\bdownload( more)? ram\b/i,                     :download_ram,       command: true
       route /\bdo (yo)?u( even)? (work( )?out|lift)\b/i,     :do_u_workout,       command: true
+      route /\Aping\z/i,                                     :ping,               command: true
+
+      def ping response
+        pongs = ['Can I help you?', "Yes...I'm still here.", "I'm alive!"]
+        response.reply pongs.sample
+      end
+
+      def bob_the_butler response
+        response.reply 'http://i.imgur.com/03Z2wsy.jpg'
+      end
 
       def dis_gon_b_gud response
         response.reply "http://i.imgur.com/uh5A6.gif"
@@ -122,7 +133,7 @@ module Lita
           https://quizzicalllama.files.wordpress.com/2013/10/76081-adam-sandler-haha-shut-up-gif-mh2n.gif
           http://cdn.memegenerator.net/instances/500x/44569345.jpg
         ]
-        response.reply "Pineapple #{response.matches.flatten.first}, PINEAPPLE!"
+        response.reply "Pineapple #{response.message.body}, PINEAPPLE!"
         after(1) { |timer| response.reply "pineapple means shut the fuck up!" }
         after(4) { |timer| response.reply pineapples.sample }
       end
