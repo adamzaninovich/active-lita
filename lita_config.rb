@@ -1,6 +1,7 @@
 $:.unshift "#{File.dirname(__FILE__)}/lib"
 
 require 'lita/handlers/active_random'
+require 'lita/handlers/bad_programming_languages'
 
 Lita.configure do |config|
   # The name your robot will use.
