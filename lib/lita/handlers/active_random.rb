@@ -25,7 +25,7 @@ module Lita
       route /\bI love you\b/i,                               :lita_love,          command: true
       route /\ba?re? y?o?u drunk/i,                          :r_u_drunk,          command: true
       route /\bdownload( more)? ram\b/i,                     :download_ram,       command: true
-      route /\bdo (yo)?u work( )?out\b/i,                    :do_u_workout,       command: true
+      route /\bdo (yo)?u( even)? (work( )?out|lift)\b/i,     :do_u_workout,       command: true
 
       def dis_gon_b_gud response
         response.reply "http://i.imgur.com/uh5A6.gif"
