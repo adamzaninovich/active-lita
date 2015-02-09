@@ -12,7 +12,7 @@ Lita.configure do |config|
     config.adapters.slack.token = ENV["SLACK_LITA_TOKEN"]
     config.robot.admins = ENV["LITA_ADMINS"].to_s.split ','
     config.redis[:url] = ENV["REDISTOGO_URL"]
-    config.http.port = ENV["PORT"] | 80
+    config.http.port = ENV["PORT"] || 80
   else
     config.robot.adapter = :shell
     config.http.port = 3000
