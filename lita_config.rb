@@ -4,8 +4,8 @@ require 'lita/handlers/active_random'
 require 'lita/handlers/bad_programming_languages'
 
 Lita.configure do |config|
-  # The name your robot will use.
-  config.robot.name = "Lita"
+  # # The name your robot will use.
+  # config.robot.name = "Lita"
 
   # The adapter you want to connect with. Make sure you've added the
   # appropriate gem to the Gemfile.
@@ -16,26 +16,22 @@ Lita.configure do |config|
   end
 
   # Slack configurations
-  config.robot.mention_name = "@lita"
-  config.robot.alias = "lita"
+  # config.robot.mention_name = "@lita"
+  # config.robot.alias = "lita"
 
   # Adapters
-  config.adapter.username = "lita"
-  config.adapter.incoming_token = ENV["SLACK_INCOMING_TOKEN"]
-  config.adapter.team_domain = ENV["SLACK_TEAM_DOMAIN"]
-  config.adapter.incoming_url = ENV["SLACK_INCOMING_URL"]
-  #config.adapter.add_mention = true
+  config.adapters.slack.token = ENV["SLACK_LITA_TOKEN"]
 
   # Handlers
-  config.handlers.slack_handler.webhook_token = ENV["SLACK_WEBHOOK_TOKEN"]
-  config.handlers.slack_handler.team_domain = ENV["SLACK_TEAM_DOMAIN"]
-  config.handlers.slack_handler.ignore_user_name = "slackbot"
+  # config.handlers.slack_handler.webhook_token = ENV["SLACK_WEBHOOK_TOKEN"]
+  # config.handlers.slack_handler.team_domain = ENV["SLACK_TEAM_DOMAIN"]
+  # config.handlers.slack_handler.ignore_user_name = "slackbot"
 
   config.handlers.yelpme.consumer_secret = ENV['YELP_CONSUMER_SECRET']
   config.handlers.yelpme.consumer_key = ENV['YELP_CONSUMER_KEY']
   config.handlers.yelpme.token = ENV['YELP_TOKEN']
   config.handlers.yelpme.token_secret = ENV['YELP_TOKEN_SECRET']
-  config.handlers.yelpme.default_city = 'San Diego'
+  config.handlers.yelpme.default_city = 'Dallas'
 
   # The locale code for the language to use.
   # config.robot.locale = :en
