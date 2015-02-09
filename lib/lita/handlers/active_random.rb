@@ -41,7 +41,7 @@ module Lita
       end
 
       def ping response
-        pongs = ['Can I help you?', "Yes...I'm still here.", "I'm alive!"]
+        pongs = ['PONG!', 'Can I help you?', "Yes...I'm still here.", "I'm alive!"]
         response.reply pongs.sample
       end
 
