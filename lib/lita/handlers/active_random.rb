@@ -100,7 +100,7 @@ module Lita
       end
 
       def toooootally response
-        num = msg.random [0..9]
+        num = (0..9).to_a.sample
         response.reply case
         when num % 4 == 0
           "http://i.imgur.com/XuTdELg.jpg"
