@@ -4,7 +4,7 @@ module Lita
   module Handlers
     class ActiveRandom < Handler
       route /\bbutler\b/i,                                   :bob_the_butler
-      route /\bdis gon b gud\b/,                             :dis_gon_b_gud
+      route /\b(dis|this)( is)? gon(na)? be? g(u|oo)d\b/,    :dis_gon_b_gud
       route /\bhmm*\b/i,                                     :pensive_nate
       route /\bdemeter\b/i,                                  :say_demeter_again
       route /\bgrapes\b/i,                                   :fuck_yo_grapes
@@ -39,7 +39,12 @@ module Lita
       end
 
       def dis_gon_b_gud response
-        response.reply "http://i.imgur.com/uh5A6.gif"
+        guds = %w[
+          http://i.imgur.com/j7PKhl1.gif
+          http://i.imgur.com/mtHKey3.gif
+          http://i.imgur.com/uh5A6.gif
+        ]
+        response.reply guds.sample
       end
 
       def pensive_nate response
