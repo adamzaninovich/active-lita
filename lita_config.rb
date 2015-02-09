@@ -4,13 +4,12 @@ require 'lita/handlers/active_random'
 require 'lita/handlers/bad_programming_languages'
 
 Lita.configure do |config|
-  # # The name your robot will use.
-  # config.robot.name = "Lita"
 
-  # The adapter you want to connect with. Make sure you've added the
-  # appropriate gem to the Gemfile.
+  # Adapter
+
   if ENV["RACK_ENV"] == "production"
     config.robot.adapter = :slack
+    config.adapters.slack.token = ENV["SLACK_LITA_TOKEN"]
   else
     config.robot.adapter = :shell
   end
@@ -19,10 +18,8 @@ Lita.configure do |config|
   # config.robot.mention_name = "@lita"
   # config.robot.alias = "lita"
 
-  # Adapters
-  config.adapters.slack.token = ENV["SLACK_LITA_TOKEN"]
-
   # Handlers
+
   # config.handlers.slack_handler.webhook_token = ENV["SLACK_WEBHOOK_TOKEN"]
   # config.handlers.slack_handler.team_domain = ENV["SLACK_TEAM_DOMAIN"]
   # config.handlers.slack_handler.ignore_user_name = "slackbot"
@@ -42,7 +39,7 @@ Lita.configure do |config|
   config.robot.log_level = :info
 
   config.redis.url = ENV["REDISTOGO_URL"]
-  config.http.port = ENV["PORT"]
+  config.http.port = ENV["PORT"] || 3000
 
   config.robot.admins = ENV["LITA_ADMINS"].to_s.split ','
 end
