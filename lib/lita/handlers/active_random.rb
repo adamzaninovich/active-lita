@@ -31,7 +31,11 @@ module Lita
       route /\Aping\z/i,                                     :ping,               command: true
 
       def haha response
-        if (1..20).to_a.sample == 5
+        @haha_count ||= 0
+        @haha_count += 1
+        puts @haha_count
+        if @haha_count == 93
+          @haha_count = 0
           response.reply "https://s3.amazonaws.com/giphymedia/media/Ic97mPViHEG5O/giphy.gif"
         end
       end
