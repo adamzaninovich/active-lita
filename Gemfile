@@ -4,8 +4,7 @@ ruby '2.2.0'
 gem "lita"
 
 # Adapters
-gem "lita-slack"
-gem "lita-slack-handler"
+gem "lita-slack", group: :production
 
 # Plugins
 gem "lita-karma"

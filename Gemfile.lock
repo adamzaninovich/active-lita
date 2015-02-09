@@ -71,8 +71,6 @@ GEM
       faye-websocket (>= 0.8.0)
       lita (>= 4.0.4)
       multi_json
-    lita-slack-handler (1.0.0)
-      lita-slack (>= 1.0.0)
     lita-wikipedia (0.0.3)
       lita (>= 3.1)
     lita-xkcd (0.0.5)
@@ -121,7 +119,6 @@ DEPENDENCIES
   lita-google-images!
   lita-karma
   lita-slack
-  lita-slack-handler
   lita-what-does-the-fox-say!
   lita-wikipedia
   lita-xkcd
