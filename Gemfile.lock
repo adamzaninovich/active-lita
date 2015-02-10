@@ -1,11 +1,4 @@
 GIT
-  remote: git://github.com/adamzaninovich/lita-google-images.git
-  revision: 2e600bc29247c492003fd7104bdf0b1ae47021b9
-  specs:
-    lita-google-images (1.0.5)
-      lita (>= 2.0)
-
-GIT
   remote: git://github.com/tielur/lita-ascii-art.git
   revision: f91ad85255cafa10c5fd2c8e0f6c940fa1b50346
   specs:
@@ -63,6 +56,8 @@ GEM
     lita-baby_elephant (0.0.5)
       lita (>= 3.3)
       read_it (= 0.0.2)
+    lita-google-images (2.0.0)
+      lita (>= 4.0)
     lita-karma (3.0.0)
       lita (>= 4.0)
     lita-slack (1.1.0)
@@ -116,7 +111,7 @@ DEPENDENCIES
   lita-ascii-art!
   lita-baby_elephant (= 0.0.5)
   lita-custom-meme!
-  lita-google-images!
+  lita-google-images
   lita-karma
   lita-slack
   lita-what-does-the-fox-say!

@@ -12,7 +12,7 @@ gem "lita-wikipedia"
 gem "lita-xkcd"
 gem "lita-yelpme"
 gem "lita-baby_elephant", '0.0.5'
-gem "lita-google-images", github: 'adamzaninovich/lita-google-images'
+gem "lita-google-images"
 gem "lita-ascii-art", github: 'tielur/lita-ascii-art'
 gem "lita-what-does-the-fox-say", github: 'tielur/lita-what-does-the-fox-say'
 gem 'lita-custom-meme', github: 'tielur/lita-custom-meme'

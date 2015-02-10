@@ -6,7 +6,6 @@ require 'lita/handlers/bad_programming_languages'
 Lita.configure do |config|
 
   # Adapter
-
   if ENV["RACK_ENV"] == "production"
     config.robot.adapter = :slack
     config.adapters.slack.token = ENV["SLACK_LITA_TOKEN"]
@@ -19,15 +18,14 @@ Lita.configure do |config|
   end
 
   # Handlers
-
+  config.handlers.google_images.safe_search = :active
   config.handlers.yelpme.consumer_secret = ENV['YELP_CONSUMER_SECRET']
-  config.handlers.yelpme.consumer_key = ENV['YELP_CONSUMER_KEY']
-  config.handlers.yelpme.token = ENV['YELP_TOKEN']
-  config.handlers.yelpme.token_secret = ENV['YELP_TOKEN_SECRET']
-  config.handlers.yelpme.default_city = 'Dallas'
+  config.handlers.yelpme.consumer_key    = ENV['YELP_CONSUMER_KEY']
+  config.handlers.yelpme.token           = ENV['YELP_TOKEN']
+  config.handlers.yelpme.token_secret    = ENV['YELP_TOKEN_SECRET']
+  config.handlers.yelpme.default_city    = 'Dallas'
 
   # The severity of messages to log. Options are:
   # :debug, :info, :warn, :error, :fatal
-  # Messages at the selected level and above will be logged.
   config.robot.log_level = :warn
 end
