@@ -10,7 +10,6 @@ gem 'lita-slack'
 gem 'lita-karma'
 gem 'lita-wikipedia'
 gem 'lita-xkcd'
-gem 'lita-yelpme'
 gem 'lita-baby_elephant'
 gem 'lita-google-images'
 gem 'lita-ascii-art', github: 'tielur/lita-ascii-art'
@@ -20,5 +19,5 @@ gem 'lita-memegen'
 # Dev Tools
 group :development do
   gem 'pry'
-  gem 'dotenv-rails'
+  gem 'dotenv'
 end
