@@ -1,2 +1,3 @@
 .rvmrc
+.env
 production.env
