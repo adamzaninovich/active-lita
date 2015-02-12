@@ -3,7 +3,7 @@ require "lita"
 module Lita
   module Handlers
     class BadProgrammingLanguages < Handler
-      route /\b(java|cobol|vimscript)[\??!]*\b/i, :bad_programming_languages
+      route /\b(java|cobol|vimscript)\W*\b/i, :bad_programming_languages
 
       def bad_programming_languages response
         response.reply QUOTES[response.matches[0][0].downcase.to_sym].sample
