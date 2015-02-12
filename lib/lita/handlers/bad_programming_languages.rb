@@ -1,12 +1,14 @@
 require "lita"
+require 'pry'
 
 module Lita
   module Handlers
     class BadProgrammingLanguages < Handler
-      route /\b(java|cobol|vimscript)\b/i, :bad_programming_languages
+      route /\b(java|cobol|vimscript)[\??!]*\b/i, :bad_programming_languages
 
       def bad_programming_languages response
-        response.reply QUOTES[response.message.body.downcase.to_sym].sample
+        language = response.message.body.gsub /\?|!/, ''
+        response.reply QUOTES[language.downcase.to_sym].sample
       end
 
       QUOTES = {
