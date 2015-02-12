@@ -15,6 +15,7 @@ Lita.configure do |config|
   else
     config.robot.adapter = :shell
     config.http.port = 3000
+    config.adapters.slack.token = 'invalid'
   end
 
   # Handlers
