@@ -7,13 +7,6 @@ GIT
       lita (>= 3.0.0)
 
 GIT
-  remote: git://github.com/tielur/lita-custom-meme.git
-  revision: 395d713894b2dd78ae5ce7775b36a42967ac17ed
-  specs:
-    lita-custom-meme (0.1.1)
-      lita (>= 3.1)
-
-GIT
   remote: git://github.com/tielur/lita-what-does-the-fox-say.git
   revision: 9af9db11a1c40bac268650dda3a6ccbd6e106b99
   specs:
@@ -60,6 +53,8 @@ GEM
       lita (>= 4.0)
     lita-karma (3.0.0)
       lita (>= 4.0)
+    lita-memegen (1.0.4)
+      lita (>= 2.0)
     lita-slack (1.1.0)
       eventmachine
       faraday
@@ -109,10 +104,10 @@ DEPENDENCIES
   dotenv-rails
   lita
   lita-ascii-art!
-  lita-baby_elephant (= 0.0.5)
-  lita-custom-meme!
+  lita-baby_elephant
   lita-google-images
   lita-karma
+  lita-memegen
   lita-slack
   lita-what-does-the-fox-say!
   lita-wikipedia
