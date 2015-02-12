@@ -6,8 +6,7 @@ module Lita
       route /\b(java|cobol|vimscript)[\??!]*\b/i, :bad_programming_languages
 
       def bad_programming_languages response
-        language = response.message.body.gsub /\?|!/, ''
-        response.reply QUOTES[language.downcase.to_sym].sample
+        response.reply QUOTES[response.matches[0][0].downcase.to_sym].sample
       end
 
       QUOTES = {
