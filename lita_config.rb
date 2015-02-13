@@ -13,6 +13,7 @@ Lita.configure do |config|
     config.redis[:url] = ENV["REDISTOGO_URL"]
     config.http.port = ENV["PORT"] || 80
   else
+    require 'pry'
     require 'dotenv'
     Dotenv.load
     config.robot.adapter = :shell
@@ -24,6 +25,7 @@ Lita.configure do |config|
   config.handlers.google_images.safe_search = :active
   config.handlers.memegen.username = ENV["MEMEGEN_USER"]
   config.handlers.memegen.password = ENV["MEMEGEN_PASS"]
+  config.handlers.memegen.command_only = false
 
   # The severity of messages to log. Options are:
   # :debug, :info, :warn, :error, :fatal
