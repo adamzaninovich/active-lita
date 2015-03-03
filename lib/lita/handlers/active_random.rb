@@ -64,7 +64,9 @@ module Lita
       end
 
       def pensive_nate response
-        response.reply "http://i.imgur.com/4PaAUu5.png"
+        with_a_percent_chance_of 0.2 do
+          response.reply "http://i.imgur.com/4PaAUu5.png"
+        end
       end
 
       def say_demeter_again response
@@ -116,14 +118,10 @@ module Lita
       end
 
       def toooootally response
-        num = (0..9).to_a.sample
-        response.reply case
-        when num % 4 == 0
-          "http://i.imgur.com/XuTdELg.jpg"
-        when num == 2
-          "http://i.imgur.com/4hSczvR.png"
+        if percent_chance_of? 0.2
+          response.reply "http://i.imgur.com/XuTdELg.jpg"
         else
-          "to#{'o' * (num+1)}tally"
+          response.reply "to#{'o' * (0..9).to_a.sample}tally"
         end
       end
 
