@@ -178,7 +178,10 @@ module Lita
       end
 
       def download_ram response
-        response.reply "downloading all the RAMs..."
+        response.reply "downloading more RAMs (courtesy of downloadmoreram.com)..."
+        after(1) { |timer| response.reply "downloading more RAMs..." }
+        after(2) { |timer| response.reply "downloading more RAMs..." }
+        after(3) { |timer| response.reply "All RAMs downloaded!" }
       end
 
       def do_u_workout response
