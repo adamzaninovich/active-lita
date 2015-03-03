@@ -3,6 +3,7 @@ require "lita"
 module Lita
   module Handlers
     class ActiveRandom < Handler
+      route /\bcocaine\b/,                                   :cocaine
       route /\b(ha(ha)+|lol)\b/i,                            :haha
       route /\bbutler\b/i,                                   :bob_the_butler
       route /\b(dis|this)( is)? gon(na)? be? g(u|oo)d\b/,    :dis_gon_b_gud
@@ -29,6 +30,10 @@ module Lita
       route /\bdownload( more)? ram\b/i,                     :download_ram,       command: true
       route /\bdo (yo)?u( even)? (work( )?out|lift)\b/i,     :do_u_workout,       command: true
       route /\Aping\z/i,                                     :ping,               command: true
+
+      def cocaine response
+        response.reply 'http://i.imgur.com/A3QICEQ.gif'
+      end
 
       def haha response
         count = redis.get('active_random.haha.count').to_i || 0
