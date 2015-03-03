@@ -186,6 +186,6 @@ module Lita
       end
 
     end
-    Lita.register_handler(ActiveRandom)
+    Lita.register_handler ActiveRandom
   end
 end
