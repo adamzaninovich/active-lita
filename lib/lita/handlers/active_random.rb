@@ -188,6 +188,16 @@ module Lita
         response.reply "http://i.imgur.com/EoqKfIx.jpg"
       end
 
+      private
+
+      def with_a_percent_chance_of percent, &block
+        block.call if percent_chance_of? percent
+      end
+
+      def percent_chance_of? percent
+        percent >= Random.rand
+      end
+
     end
     Lita.register_handler ActiveRandom
   end
