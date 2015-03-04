@@ -3,7 +3,7 @@ require "lita"
 module Lita
   module Handlers
     class ActiveRandom < Handler
-      route /\bcache(ing)? ?bug\b/,                          :cache_bug
+      route /\bcach(e|ing) ?bug\??\b/,                       :cache_bug
       route /\bcocaine\b/,                                   :cocaine
       route /\b(ha(ha)+|lol)\b/i,                            :haha
       route /\bbutler\b/i,                                   :bob_the_butler
