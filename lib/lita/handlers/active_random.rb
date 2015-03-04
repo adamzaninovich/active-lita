@@ -3,6 +3,7 @@ require "lita"
 module Lita
   module Handlers
     class ActiveRandom < Handler
+      route /\bcache(ing)? ?bug\b/,                          :cache_bug
       route /\bcocaine\b/,                                   :cocaine
       route /\b(ha(ha)+|lol)\b/i,                            :haha
       route /\bbutler\b/i,                                   :bob_the_butler
@@ -16,7 +17,6 @@ module Lita
       route /\bbusted\b/i,                                   :busted!
       route /\bdevops\b/i,                                   :devops
       route /\bbeemo\b/i,                                    :beemo
-      route /\bcache\b/i,                                    :cash
       route /\bto+t(ally|es)\b/i,                            :toooootally
       route /\bIT IS DECIDED\!?\b/,                          :it_is_decided
       route /\boh? (yo)?u so\b/i,                            :oh_you_so
@@ -30,6 +30,10 @@ module Lita
       route /\bdownload( more)? ram\b/i,                     :download_ram,       command: true
       route /\bdo (yo)?u( even)? (work( )?out|lift)\b/i,     :do_u_workout,       command: true
       route /\Aping\z/i,                                     :ping,               command: true
+
+      def cache_bug response
+        response.reply 'http://i.imgur.com/Mt669js.png'
+      end
 
       def cocaine response
         response.reply 'http://i.imgur.com/A3QICEQ.gif'
@@ -111,10 +115,6 @@ module Lita
 
       def beemo response
         response.reply "http://25.media.tumblr.com/tumblr_lwxdpiz2nL1r32wpdo1_400.gif"
-      end
-
-      def cash response
-        response.reply "http://29.media.tumblr.com/tumblr_lucazumFaJ1qela0oo1_500.png"
       end
 
       def toooootally response
