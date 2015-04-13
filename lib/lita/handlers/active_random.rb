@@ -3,6 +3,7 @@ require "lita"
 module Lita
   module Handlers
     class ActiveRandom < Handler
+      route /\bbig ?data\b/,                                 :big_data
       route /\bcach(e|ing) ?bug\??\b/,                       :cache_bug
       route /\bcocaine\b/,                                   :cocaine
       route /\b(ha(ha)+|lol)\b/i,                            :haha
@@ -30,6 +31,10 @@ module Lita
       route /\bdownload( more)? ram\b/i,                     :download_ram,       command: true
       route /\bdo (yo)?u( even)? (work( )?out|lift)\b/i,     :do_u_workout,       command: true
       route /\Aping\z/i,                                     :ping,               command: true
+
+      def big_data response
+        response.reply 'http://i.imgur.com/U6m4s4o.jpg'
+      end
 
       def cache_bug response
         response.reply 'http://i.imgur.com/Mt669js.png'
