@@ -33,7 +33,7 @@ module Lita
       route /\Aping\z/i,                                     :ping,               command: true
 
       def big_data response
-        response.reply 'https://s-media-cache-ak0.pinimg.com/736x/91/fd/52/91fd522284b34b4e133656f5c222c57f.jpg'
+        response.reply 'http://i.imgur.com/U6m4s4o.jpg'
       end
 
       def cache_bug response
