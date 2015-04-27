@@ -3,6 +3,7 @@ require "lita"
 module Lita
   module Handlers
     class ActiveRandom < Handler
+      route /\bhow works\b,                                  :how_shit_works
       route /\bbig ?data\b/,                                 :big_data
       route /\bcach(e|ing) ?bug\??\b/,                       :cache_bug
       route /\bcocaine\b/,                                   :cocaine
@@ -32,12 +33,20 @@ module Lita
       route /\bdo (yo)?u( even)? (work( )?out|lift)\b/i,     :do_u_workout,       command: true
       route /\Aping\z/i,                                     :ping,               command: true
 
+
+      def how_shit_works
+        response.reply 'http://i.imgur.com/RwxNVbV.png'
+      end
+
       def big_data response
         response.reply 'http://i.imgur.com/U6m4s4o.jpg'
       end
 
       def cache_bug response
-        response.reply 'http://i.imgur.com/Mt669js.png'
+        bugs = [  'http://i.imgur.com/mus48mo.jpg',
+                  'http://i.imgur.com/Mt669js.png',
+                  'http://i.imgur.com/OzI9RZq.jpg']
+        response.reply bugs.sample
       end
 
       def cocaine response
