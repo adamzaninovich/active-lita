@@ -34,7 +34,7 @@ module Lita
       route /\Aping\z/i,                                     :ping,               command: true
 
 
-      def how_shit_works
+      def how_shit_works response
         response.reply 'http://i.imgur.com/RwxNVbV.png'
       end
 
