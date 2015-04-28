@@ -116,7 +116,12 @@ module Lita
       end
 
       def nope_nope_nope response
-        response.reply ["http://i.imgur.com/yBE4JbR.jpg", "http://i.imgur.com/DgczUtV.png"].sample
+        nopes = %w[
+          http://i.imgur.com/ZG8Y5XQ.gif
+          http://i.imgur.com/yBE4JbR.jpg
+          http://i.imgur.com/DgczUtV.png
+        ]
+        response.reply nopes.sample
       end
 
       def busted response
