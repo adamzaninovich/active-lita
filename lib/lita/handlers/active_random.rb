@@ -3,7 +3,8 @@ require "lita"
 module Lita
   module Handlers
     class ActiveRandom < Handler
-      route /\bhow( shit)? works\b/,                                 :how_shit_works
+      route /mic ?drop|drop( ?the)? ?mic/,                   :mic_drop
+      route /\bhow( shit)? works\b/,                         :how_shit_works
       route /\bbig ?data\b/,                                 :big_data
       route /\bcach(e|ing) ?bug\??\b/,                       :cache_bug
       route /\bcocaine\b/,                                   :cocaine
@@ -33,6 +34,16 @@ module Lita
       route /\bdo (yo)?u( even)? (work( )?out|lift)\b/i,     :do_u_workout,       command: true
       route /\Aping\z/i,                                     :ping,               command: true
 
+      def mic_drop response
+        drops = %w[
+          http://i.imgur.com/MpEqxwM.gif
+          http://i.imgur.com/YANYG8d.gif
+          http://i.imgur.com/ZxZUyH9.gif
+          http://i.imgur.com/9XVQlvS.gif
+          http://i.imgur.com/XTWiamq.gif
+        ]
+        response.reply drops.sample
+      end
 
       def how_shit_works response
         response.reply 'http://i.imgur.com/RwxNVbV.png'
