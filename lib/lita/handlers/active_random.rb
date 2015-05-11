@@ -88,6 +88,7 @@ module Lita
           http://i.imgur.com/j7PKhl1.gif
           http://i.imgur.com/mtHKey3.gif
           http://i.imgur.com/uh5A6.gif
+          http://i.imgur.com/o3o1fU3.gif
         ]
         response.reply guds.sample
       end
