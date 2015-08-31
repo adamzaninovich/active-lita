@@ -41,6 +41,7 @@ module Lita
           http://i.imgur.com/ZxZUyH9.gif
           http://i.imgur.com/9XVQlvS.gif
           http://i.imgur.com/XTWiamq.gif
+          http://i.imgur.com/3hkSF89.gif
         ]
         response.reply drops.sample
       end
