@@ -38,8 +38,7 @@ module Lita
       def devin_quotes response
         user = response.message.source.user.name
         quote = response.message.body
-        $stdout.sync = true
-        puts ["> #{quote}", " - #{user}"].join "\n"
+        response.reply "> #{quote}", " - #{user}" if user == "Markus Olsen"
       end
 
       def mic_drop response
