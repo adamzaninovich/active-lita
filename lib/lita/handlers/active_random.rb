@@ -38,7 +38,7 @@ module Lita
       def devin_quotes response
         user = response.message.source.user.name
         quote = response.message.body
-        response.reply "> #{quote}", " - #{user}" if user == "Markus Olsen"
+        response.reply "> #{quote}", " - Devin Mathew Clark" if user == "Devin Clark"
       end
 
       def mic_drop response
