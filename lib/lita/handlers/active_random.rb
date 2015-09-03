@@ -33,6 +33,14 @@ module Lita
       route /\bdownload( more)? ram\b/i,                     :download_ram,       command: true
       route /\bdo (yo)?u( even)? (work( )?out|lift)\b/i,     :do_u_workout,       command: true
       route /\Aping\z/i,                                     :ping,               command: true
+      route /*/i,                                            :devin_quotes
+
+      def devin_quotes
+        user = response.message.source.user.name
+        quote = response.message.body
+        $stdout.sync = true
+        puts ["> #{quote}", " - #{user}"].join "\n"
+      end
 
       def mic_drop response
         drops = %w[
