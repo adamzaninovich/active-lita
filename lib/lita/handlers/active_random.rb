@@ -35,7 +35,7 @@ module Lita
       route /\Aping\z/i,                                     :ping,               command: true
       route /.*/i,                                            :devin_quotes
 
-      def devin_quotes
+      def devin_quotes response
         user = response.message.source.user.name
         quote = response.message.body
         $stdout.sync = true
