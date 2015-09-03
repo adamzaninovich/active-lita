@@ -33,7 +33,7 @@ module Lita
       route /\bdownload( more)? ram\b/i,                     :download_ram,       command: true
       route /\bdo (yo)?u( even)? (work( )?out|lift)\b/i,     :do_u_workout,       command: true
       route /\Aping\z/i,                                     :ping,               command: true
-      route /*/i,                                            :devin_quotes
+      route /.*/i,                                            :devin_quotes
 
       def devin_quotes
         user = response.message.source.user.name
