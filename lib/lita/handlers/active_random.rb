@@ -33,12 +33,15 @@ module Lita
       route /\bdownload( more)? ram\b/i,                     :download_ram,       command: true
       route /\bdo (yo)?u( even)? (work( )?out|lift)\b/i,     :do_u_workout,       command: true
       route /\Aping\z/i,                                     :ping,               command: true
-      route /.*/i,                                            :devin_quotes
+      route /.*/i,                                           :devin_quotes
 
       def devin_quotes response
         user = response.message.source.user.name
         quote = response.message.body
-        response.reply "> #{quote}", " - Devin Mathew Clark" if user == "Devin Clark"
+        if user == "Devin Clark"
+          puts ["> #{quote}", " - Devin Mathew Clark"].join "\n"
+          response.reply "> #{quote}", " - Devin Mathew Clark"
+        end
       end
 
       def mic_drop response
