@@ -3,6 +3,11 @@ require "lita"
 module Lita
   module Handlers
     class ActiveRandom < Handler
+      route /mic ?drop|drop( ?the)? ?mic/,                   :mic_drop
+      route /\bhow( shit)? works\b/,                         :how_shit_works
+      route /\bbig ?data\b/,                                 :big_data
+      route /\bcach(e|ing) ?bug\??\b/,                       :cache_bug
+      route /\bcocaine\b/,                                   :cocaine
       route /\b(ha(ha)+|lol)\b/i,                            :haha
       route /\bbutler\b/i,                                   :bob_the_butler
       route /\b(dis|this)( is)? gon(na)? be? g(u|oo)d\b/,    :dis_gon_b_gud
@@ -11,11 +16,10 @@ module Lita
       route /\bgrapes\b/i,                                   :fuck_yo_grapes
       route /\b(wub ?(wub)?|dub(step)?|d+rop.*bas(s|e))\b/i, :ddddddrop_the_bass
       route /\b(mad|angry|rage)\b/i,                         :u_mad_bro
-      route /\bnope\b/i,                                     :nope_nope_nope
+      route /\bno+pe+\b/i,                                   :nope_nope_nope
       route /\bbusted\b/i,                                   :busted!
       route /\bdevops\b/i,                                   :devops
       route /\bbeemo\b/i,                                    :beemo
-      route /\bcache\b/i,                                    :cash
       route /\bto+t(ally|es)\b/i,                            :toooootally
       route /\bIT IS DECIDED\!?\b/,                          :it_is_decided
       route /\boh? (yo)?u so\b/i,                            :oh_you_so
@@ -29,6 +33,47 @@ module Lita
       route /\bdownload( more)? ram\b/i,                     :download_ram,       command: true
       route /\bdo (yo)?u( even)? (work( )?out|lift)\b/i,     :do_u_workout,       command: true
       route /\Aping\z/i,                                     :ping,               command: true
+      route /.*/i,                                           :devin_quotes
+
+      def devin_quotes response
+        user = response.message.source.user.name
+        quote = response.message.body
+        if user == "Devin Clark"
+          puts ["> #{quote}", " - Devin Mathew Clark"].join "\n"
+          response.reply "> #{quote}", " - Devin Mathew Clark"
+        end
+      end
+
+      def mic_drop response
+        drops = %w[
+          http://i.imgur.com/MpEqxwM.gif
+          http://i.imgur.com/YANYG8d.gif
+          http://i.imgur.com/ZxZUyH9.gif
+          http://i.imgur.com/9XVQlvS.gif
+          http://i.imgur.com/XTWiamq.gif
+          http://i.imgur.com/3hkSF89.gif
+        ]
+        response.reply drops.sample
+      end
+
+      def how_shit_works response
+        response.reply 'http://i.imgur.com/RwxNVbV.png'
+      end
+
+      def big_data response
+        response.reply 'http://i.imgur.com/U6m4s4o.jpg'
+      end
+
+      def cache_bug response
+        bugs = [  'http://i.imgur.com/mus48mo.jpg',
+                  'http://i.imgur.com/Mt669js.png',
+                  'http://i.imgur.com/OzI9RZq.jpg']
+        response.reply bugs.sample
+      end
+
+      def cocaine response
+        response.reply 'http://i.imgur.com/A3QICEQ.gif'
+      end
 
       def haha response
         count = redis.get('active_random.haha.count').to_i || 0
@@ -54,12 +99,15 @@ module Lita
           http://i.imgur.com/j7PKhl1.gif
           http://i.imgur.com/mtHKey3.gif
           http://i.imgur.com/uh5A6.gif
+          http://i.imgur.com/o3o1fU3.gif
         ]
         response.reply guds.sample
       end
 
       def pensive_nate response
-        response.reply "http://i.imgur.com/4PaAUu5.png"
+        with_a_percent_chance_of 0.2 do
+          response.reply "http://i.imgur.com/4PaAUu5.png"
+        end
       end
 
       def say_demeter_again response
@@ -91,7 +139,12 @@ module Lita
       end
 
       def nope_nope_nope response
-        response.reply ["http://i.imgur.com/yBE4JbR.jpg", "http://i.imgur.com/DgczUtV.png"].sample
+        nopes = %w[
+          http://i.imgur.com/ZG8Y5XQ.gif
+          http://i.imgur.com/yBE4JbR.jpg
+          http://i.imgur.com/DgczUtV.png
+        ]
+        response.reply nopes.sample
       end
 
       def busted response
@@ -106,19 +159,11 @@ module Lita
         response.reply "http://25.media.tumblr.com/tumblr_lwxdpiz2nL1r32wpdo1_400.gif"
       end
 
-      def cash response
-        response.reply "http://29.media.tumblr.com/tumblr_lucazumFaJ1qela0oo1_500.png"
-      end
-
       def toooootally response
-        num = (0..9).to_a.sample
-        response.reply case
-        when num % 4 == 0
-          "http://i.imgur.com/XuTdELg.jpg"
-        when num == 2
-          "http://i.imgur.com/4hSczvR.png"
+        if percent_chance_of? 0.2
+          response.reply "http://i.imgur.com/XuTdELg.jpg"
         else
-          "to#{'o' * (num+1)}tally"
+          response.reply "to#{'o' * (0..9).to_a.sample}tally"
         end
       end
 
@@ -165,12 +210,7 @@ module Lita
       end
 
       def lita_love response
-        love = if response.user.name == 'tielur'
-          %w[eh meh whatever].sample
-        else
-          "aww, I love you too, #{response.user.name}!"
-        end
-        response.reply love
+        response.reply "aww, I love you too, #{response.user.name}!"
       end
 
       def r_u_drunk response
@@ -178,14 +218,27 @@ module Lita
       end
 
       def download_ram response
-        response.reply "downloading all the RAMs..."
+        response.reply "downloading more RAMs (courtesy of downloadmoreram.com)..."
+        after(1) { |timer| response.reply "downloading more RAMs..." }
+        after(2) { |timer| response.reply "downloading more RAMs..." }
+        after(3) { |timer| response.reply "All RAMs downloaded!" }
       end
 
       def do_u_workout response
         response.reply "http://i.imgur.com/EoqKfIx.jpg"
       end
 
+      private
+
+      def with_a_percent_chance_of percent, &block
+        block.call if percent_chance_of? percent
+      end
+
+      def percent_chance_of? percent
+        percent >= Random.rand
+      end
+
     end
-    Lita.register_handler(ActiveRandom)
+    Lita.register_handler ActiveRandom
   end
 end

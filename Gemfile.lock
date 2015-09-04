@@ -59,6 +59,8 @@ GEM
       multi_json
     lita-wikipedia (0.0.3)
       lita (>= 3.1)
+    lita-words-counter (0.2.0)
+      lita (>= 3.3)
     lita-xkcd (0.0.5)
       lita (>= 2.2)
     method_source (0.8.2)
@@ -99,5 +101,6 @@ DEPENDENCIES
   lita-slack
   lita-what-does-the-fox-say!
   lita-wikipedia
+  lita-words-counter (= 0.2.0)
   lita-xkcd
   pry
