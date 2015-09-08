@@ -27,7 +27,7 @@ module Lita
       route /\bhubot\b/i,                                    :hubot
       route /\bpineapple (.+)\b/i,                           :pineapple
       route /\bgooo+d\b/i,                                   :goooood
-      route /.*/,                                            :quoth_the_devin
+      #route /.*/,                                            :quoth_the_devin
       route /\bI love you.*lita\b/i,                         :lita_love
       route /\bI love you\b/i,                               :lita_love,          command: true
       route /\ba?re? y?o?u drunk/i,                          :r_u_drunk,          command: true
@@ -35,15 +35,15 @@ module Lita
       route /\bdo (yo)?u( even)? (work( )?out|lift)\b/i,     :do_u_workout,       command: true
       route /\Aping\z/i,                                     :ping,               command: true
 
-      def quoth_the_devin response
-        if response.message.source.user.name == "Devin Clark"
-          with_a_percent_chance_of 0.05 do
-            after 5 do |_|
-              response.reply "> #{response.message.body}", " — Devin Mathew Clark"
-            end
-          end
-        end
-      end
+      #def quoth_the_devin response
+      #  if response.message.source.user.name == "Devin Clark"
+      #    with_a_percent_chance_of 0.05 do
+      #      after 5 do |_|
+      #        response.reply "> #{response.message.body}", " — Devin Mathew Clark"
+      #      end
+      #    end
+      #  end
+      #end
 
       def mic_drop response
         drops = %w[
