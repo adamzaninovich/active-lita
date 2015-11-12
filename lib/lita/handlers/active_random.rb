@@ -17,7 +17,7 @@ module Lita
       route /\b(wub ?(wub)?|dub(step)?|d+rop.*bas(s|e))\b/i, :ddddddrop_the_bass
       route /\b(mad|angry|rage)\b/i,                         :u_mad_bro
       route /\bno+pe+\b/i,                                   :nope_nope_nope
-      route /\bbusted\b/i,                                   :busted!
+      route /\bbusted\b/i,                                   :busted
       route /\bdevops\b/i,                                   :devops
       route /\bbeemo\b/i,                                    :beemo
       route /\bto+t(ally|es)\b/i,                            :toooootally
