@@ -15,12 +15,10 @@ module Lita
           "> Java is sort of the COBOL of the 21st century, I think. It's heavyweight, verbose, and everyone loves to hate it, though not everyone will admit that.\n- Larry Wall",
           "> Using Java for serious jobs is like trying to take the skin off a rice pudding wearing boxing gloves.\n- Tel Hudson",
           "> If Java had true garbage collection, most programs would delete themselves upon execution.\n- Robert Sewell",
-          "> Java's fast... after a 12 minute running head start\n- Devin Clark",
           "> Java is the SUV of programming tools. A project done in Java will cost 5 times as much, take twice as long, and be harder to maintain than a project done in a scripting language such as PHP or Perl. … But the programmers and managers using Java will feel good about themselves because they are using a tool that, in theory, has a lot of power for handling problems of tremendous complexity. Just like the suburbanite who drives his SUV to the 7-11 on a paved road but feels good because in theory he could climb a 45-degree dirt slope\n-Philip Greenspun",
           "> Java is a DSL to transform big XML documents into long exception stack traces.\n- Scott Bellware",
           "http://harmful.cat-v.org/software/_java/problem-factory.jpg"
         ],
-
         cobol: [
           "> The use of COBOL cripples the mind; its teaching should, therefore, be regarded as a criminal offense.\n- Edsger Dijkstra",
           "> Cobol has almost no fervent enthusiasts. As a programming tool, it has roughly the sex appeal of a wrench.\n- Charles Petzold",
