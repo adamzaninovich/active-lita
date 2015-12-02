@@ -28,7 +28,7 @@ module Lita
       route /\bpineapple (.+)\b/i,                           :pineapple
       route /\bgooo+d\b/i,                                   :goooood
       #route /.*/,                                            :quoth_the_devin
-      route /\b(nate|nathaniel)\b/i,                         :nate_bomb
+      route /\b(nate|@?nathaniel)\b/i,                         :nate_bomb
       route /\bI love you.*lita\b/i,                         :lita_love
       route /\bI love you\b/i,                               :lita_love,          command: true
       route /\ba?re? y?o?u drunk/i,                          :r_u_drunk,          command: true
