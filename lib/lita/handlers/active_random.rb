@@ -28,12 +28,30 @@ module Lita
       route /\bpineapple (.+)\b/i,                           :pineapple
       route /\bgooo+d\b/i,                                   :goooood
       #route /.*/,                                            :quoth_the_devin
+      route /\b(nate|nathaniel)\b/i,                         :nate_bomb
       route /\bI love you.*lita\b/i,                         :lita_love
       route /\bI love you\b/i,                               :lita_love,          command: true
       route /\ba?re? y?o?u drunk/i,                          :r_u_drunk,          command: true
       route /\bdownload( more)? ram\b/i,                     :download_ram,       command: true
       route /\bdo (yo)?u( even)? (work( )?out|lift)\b/i,     :do_u_workout,       command: true
       route /\Aping\z/i,                                     :ping,               command: true
+
+      def nate_bomb response
+        nates = %w[
+          http://imgur.com/CUQ5Cbw.jpg
+          http://imgur.com/AECnVXs.jpg
+          http://imgur.com/JahUMyy.jpg
+          http://imgur.com/c3Oil6d.jpg
+          http://imgur.com/JmIhnXd.jpg
+          http://imgur.com/TAEE5Sj.jpg
+          http://imgur.com/vXzyuaO.jpg
+          http://imgur.com/DibZCId.jpg
+        ]
+        nates.sample(3).each_with_index do |nate, index|
+          after(index/2.0) { |t| response.reply nate }
+        end
+        after(2) { |_| response.reply "> Happy Birthday to Me", " — Nathaniel Barnes" }
+      end
 
       #def quoth_the_devin response
       #  if response.message.source.user.name == "Devin Clark"
