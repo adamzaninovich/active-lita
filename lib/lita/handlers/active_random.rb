@@ -38,19 +38,22 @@ module Lita
 
       def nate_bomb response
         nates = %w[
-          http://imgur.com/CUQ5Cbw.jpg
-          http://imgur.com/AECnVXs.jpg
-          http://imgur.com/JahUMyy.jpg
-          http://imgur.com/c3Oil6d.jpg
-          http://imgur.com/JmIhnXd.jpg
-          http://imgur.com/TAEE5Sj.jpg
-          http://imgur.com/vXzyuaO.jpg
-          http://imgur.com/DibZCId.jpg
+          http://i.imgur.com/CUQ5Cbw.jpg
+          http://i.imgur.com/AECnVXs.jpg
+          http://i.imgur.com/JahUMyy.jpg
+          http://i.imgur.com/c3Oil6d.jpg
+          http://i.imgur.com/JmIhnXd.jpg
+          http://i.imgur.com/TAEE5Sj.jpg
+          http://i.imgur.com/vXzyuaO.jpg
+          http://i.imgur.com/DibZCId.jpg
+          http://i.imgur.com/L4y7egz.jpg
+          http://i.imgur.com/eJra8wC.jpg
+          http://i.imgur.com/bTmqkSB.jpg
+
           https://i.imgflip.com/v2vdw.jpg
           https://i.imgflip.com/v2v7t.jpg
           https://i.imgflip.com/v2uld.jpg
           http://i.imgur.com/tlHPlh9.jpg
-          http://i.imgur.com/bTmqkSB.jpg
           https://i.imgflip.com/v2wdi.jpg
         ]
         nates.sample(3).each_with_index do |nate, index|
