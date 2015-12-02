@@ -46,6 +46,9 @@ module Lita
           http://imgur.com/TAEE5Sj.jpg
           http://imgur.com/vXzyuaO.jpg
           http://imgur.com/DibZCId.jpg
+          https://i.imgflip.com/v2vdw.jpg
+          https://i.imgflip.com/v2v7t.jpg
+          https://i.imgflip.com/v2uld.jpg
         ]
         nates.sample(3).each_with_index do |nate, index|
           after(index/2.0) { |t| response.reply nate }
