@@ -27,51 +27,12 @@ module Lita
       route /\bhubot\b/i,                                    :hubot
       route /\bpineapple (.+)\b/i,                           :pineapple
       route /\bgooo+d\b/i,                                   :goooood
-      #route /.*/,                                            :quoth_the_devin
-      route /\b(nate|@?nathaniel)\b/i,                         :nate_bomb
       route /\bI love you.*lita\b/i,                         :lita_love
       route /\bI love you\b/i,                               :lita_love,          command: true
       route /\ba?re? y?o?u drunk/i,                          :r_u_drunk,          command: true
       route /\bdownload( more)? ram\b/i,                     :download_ram,       command: true
       route /\bdo (yo)?u( even)? (work( )?out|lift)\b/i,     :do_u_workout,       command: true
       route /\Aping\z/i,                                     :ping,               command: true
-
-      def nate_bomb response
-        nates = %w[
-          http://i.imgur.com/CUQ5Cbw.jpg
-          http://i.imgur.com/AECnVXs.jpg
-          http://i.imgur.com/JahUMyy.jpg
-          http://i.imgur.com/c3Oil6d.jpg
-          http://i.imgur.com/JmIhnXd.jpg
-          http://i.imgur.com/TAEE5Sj.jpg
-          http://i.imgur.com/vXzyuaO.jpg
-          http://i.imgur.com/DibZCId.jpg
-          http://i.imgur.com/L4y7egz.jpg
-          http://i.imgur.com/eJra8wC.jpg
-          http://i.imgur.com/bTmqkSB.jpg
-
-          https://i.imgflip.com/v2vdw.jpg
-          https://i.imgflip.com/v2v7t.jpg
-          https://i.imgflip.com/v2uld.jpg
-          https://i.imgflip.com/v2wdi.jpg
-          https://i.imgflip.com/v2x9a.jpg
-          http://i.imgur.com/tlHPlh9.jpg
-        ]
-        nates.sample(3).each_with_index do |nate, index|
-          after(index/2.0) { |t| response.reply nate }
-        end
-        after(2) { |_| response.reply "> Happy Birthday to Me", " — Nathaniel Barnes" }
-      end
-
-      #def quoth_the_devin response
-      #  if response.message.source.user.name == "Devin Clark"
-      #    with_a_percent_chance_of 0.05 do
-      #      after 5 do |_|
-      #        response.reply "> #{response.message.body}", " — Devin Mathew Clark"
-      #      end
-      #    end
-      #  end
-      #end
 
       def mic_drop response
         drops = %w[
@@ -256,6 +217,45 @@ module Lita
       def do_u_workout response
         response.reply "http://i.imgur.com/EoqKfIx.jpg"
       end
+
+      # route /\b(nate|nathaniel)\b/i,                         :nate_bomb
+      # def nate_bomb response
+      #   nates = %w[
+      #     http://i.imgur.com/CUQ5Cbw.jpg
+      #     http://i.imgur.com/AECnVXs.jpg
+      #     http://i.imgur.com/JahUMyy.jpg
+      #     http://i.imgur.com/c3Oil6d.jpg
+      #     http://i.imgur.com/JmIhnXd.jpg
+      #     http://i.imgur.com/TAEE5Sj.jpg
+      #     http://i.imgur.com/vXzyuaO.jpg
+      #     http://i.imgur.com/DibZCId.jpg
+      #     http://i.imgur.com/L4y7egz.jpg
+      #     http://i.imgur.com/eJra8wC.jpg
+      #     http://i.imgur.com/bTmqkSB.jpg
+      #
+      #     https://i.imgflip.com/v2vdw.jpg
+      #     https://i.imgflip.com/v2v7t.jpg
+      #     https://i.imgflip.com/v2uld.jpg
+      #     https://i.imgflip.com/v2wdi.jpg
+      #     https://i.imgflip.com/v2x9a.jpg
+      #     http://i.imgur.com/tlHPlh9.jpg
+      #   ]
+      #   nates.sample(3).each_with_index do |nate, index|
+      #     after(index/2.0) { |t| response.reply nate }
+      #   end
+      #   after(2) { |_| response.reply "> Happy Birthday to Me", " — Nathaniel Barnes" }
+      # end
+
+      # route /.*/,                                            :quoth_the_devin
+      #def quoth_the_devin response
+      #  if response.message.source.user.name == "Devin Clark"
+      #    with_a_percent_chance_of 0.05 do
+      #      after 5 do |_|
+      #        response.reply "> #{response.message.body}", " — Devin Mathew Clark"
+      #      end
+      #    end
+      #  end
+      #end
 
       private
 
