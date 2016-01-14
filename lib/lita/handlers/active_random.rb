@@ -3,6 +3,7 @@ require "lita"
 module Lita
   module Handlers
     class ActiveRandom < Handler
+      route /\bpanic/i,                                      :panic
       route /mic ?drop|drop( ?the)? ?mic/,                   :mic_drop
       route /\bhow( shit)? works\b/,                         :how_shit_works
       route /\bbig ?data\b/,                                 :big_data
@@ -33,6 +34,10 @@ module Lita
       route /\bdownload( more)? ram\b/i,                     :download_ram,       command: true
       route /\bdo (yo)?u( even)? (work( )?out|lift)\b/i,     :do_u_workout,       command: true
       route /\Aping\z/i,                                     :ping,               command: true
+
+      def panic response
+        response.reply("http://i.imgur.com/IC8E0oE.png")
+      end
 
       def mic_drop response
         drops = %w[
