@@ -45,7 +45,7 @@ GEM
     lita-baby_elephant (0.0.5)
       lita (>= 3.3)
       read_it (= 0.0.2)
-    lita-google-images (2.0.0)
+    lita-google-images (3.0.0)
       lita (>= 4.0)
     lita-karma (3.0.0)
       lita (>= 4.0)
@@ -94,7 +94,7 @@ DEPENDENCIES
   lita
   lita-ascii-art!
   lita-baby_elephant
-  lita-google-images
+  lita-google-images (~> 3.0.0.0)
   lita-karma
   lita-memegen
   lita-slack
@@ -103,6 +103,3 @@ DEPENDENCIES
   lita-words-counter (= 0.2.0)
   lita-xkcd
   pry
-
-BUNDLED WITH
-   1.10.6

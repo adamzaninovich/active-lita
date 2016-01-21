@@ -22,10 +22,14 @@ Lita.configure do |config|
   end
 
   # Handlers
-  config.handlers.google_images.safe_search = :active
   config.handlers.memegen.username = ENV["MEMEGEN_USER"]
   config.handlers.memegen.password = ENV["MEMEGEN_PASS"]
   config.handlers.memegen.command_only = false
+
+  # Google custom image search
+  config.handlers.google_images.google_cse_id = ENV["GOOGLE_IMG_ID"]
+  config.handlers.google_images.google_cse_key = ENV["GOOGLE_IMG_KEY"]
+  config.handlers.google_images.safe_search = :medium
 
   # The severity of messages to log. Options are:
   # :debug, :info, :warn, :error, :fatal
