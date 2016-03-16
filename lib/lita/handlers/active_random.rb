@@ -177,7 +177,7 @@ module Lita
       end
 
       def devops response
-        response.reply "http://i.imgur.com/Ujxb5gn.png"
+        response.reply "http://i.imgur.com/6sNQ3yt.jpg"
       end
 
       def beemo response
