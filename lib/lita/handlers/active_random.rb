@@ -30,6 +30,7 @@ module Lita
       route /\bpineapple (.+)\b/i,                           :pineapple
       route /\bgooo+d\b/i,                                   :goooood
       route /\bI love you.*lita\b/i,                         :lita_love
+      route /friday/i,                                       :friday
       route /\bI love you\b/i,                               :lita_love,          command: true
       route /\ba?re? y?o?u drunk/i,                          :r_u_drunk,          command: true
       route /\bdownload( more)? ram\b/i,                     :download_ram,       command: true
@@ -251,6 +252,10 @@ module Lita
 
       def do_u_workout response
         response.reply "http://i.imgur.com/EoqKfIx.jpg"
+      end
+
+      def friday response
+        response.reply "http://media3.giphy.com/media/xTiQyCg9B3OGv1NvXi/giphy.gif"
       end
 
       # route /\b(nate|nathaniel)\b/i,                         :nate_bomb
